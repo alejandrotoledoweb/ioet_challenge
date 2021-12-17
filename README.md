@@ -22,8 +22,14 @@ name, type:string
 ### Work Model
 
 user_id, type: integer
+
+
 date, type:date
+
+
 start_time, type:time
+
+
 end_time, type:time
 
 ### 1. End Point -  post `/create`
@@ -33,13 +39,13 @@ end_time, type:time
 ### 3. End Point -  get `/pairs`
 
 
-Examples:
+## Examples:
 
-Inputs:
+## Inputs:
 ![](app/assets/users.png)
 ![](app/assets/works.png)
 
-Output:
+## Output:
 ![](app/assets/response.png)
 
 
@@ -49,8 +55,6 @@ Output:
 - Ruby 2.7.4
 - Ruby on Rails 6.1.4.1
 - Postgres: >=9.5
-
-## Live demo link
 
 ## Setup
 
@@ -100,7 +104,6 @@ Feel free to check the [issues page](https://github.com/alejandrotoledoweb/ioet_
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
 
 - Project inspired and challenged by IOET.
 
