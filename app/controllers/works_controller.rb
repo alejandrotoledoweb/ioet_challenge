@@ -26,14 +26,31 @@ class WorksController < ApplicationController
           a = w1.user[:name]
           b = w2.user[:name]
           c = a + '-' + b
-          pairs[c] ? pairs[c] += 1 : pairs[c] = 1
+          c1 = b + '-' + a
+          if pairs[c] && pairs[c1]
+            pairs[c] = 0
+          else
+            pairs[c] ? pairs[c] += 1 : pairs[c] = 1
+          end
+
         end
       end
     end
 
-    
+    @total = pairs.reject! {|key, value| value < 1 }
 
-    result = pairs
+    # for i in 0..@works.length do
+    #   for j in i+1..@works.length do
+    #     if @works[i].user_id != @works[j].user_id && @works[i].date == @works[j].date && @works[j].start_time < @works[i].end_time && @works[j].start_time >= @works[i].start_time && @works[j].end_time > @works[i].start_time && @works[j].end_time <= @works[i].end_time
+    #       a = @works[i].user[:name]
+    #       b = @works[j].user[:name]
+    #       c = a + '-' + b
+    #       pairs[c] ? pairs[c] += 1 : pairs[c] = 1
+    #     end
+    #   end
+    # end
+
+    result = @total
 
     render json: result, status: :ok
   end
